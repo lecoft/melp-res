@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-	path('melp_res/', include('melp_res.urls')),
+	path('api/v1/', include('melp_res.urls')),
     path('admin/', admin.site.urls),
 ]

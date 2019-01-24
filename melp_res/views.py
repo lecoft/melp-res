@@ -1,5 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import viewsets
+from .models import Restaurants
+from .serializers import RestaurantsSerializer
 
-def index(request):
-	return HttpResponse("Melp Restaurants")
+class RestaurantsViewSet(viewsets.ModelViewSet):
+	"""
+	Melp's system API.
+	"""
+
+	queryset = Restaurants.objects.all()
+	serializer_class = RestaurantsSerializer

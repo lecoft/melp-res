@@ -2,12 +2,12 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Restaurants(models.Model):
-	id = models.CharField(max_length=30, primary_key=True)
+	id = models.CharField(max_length=40, primary_key=True)
 	rating = models.PositiveSmallIntegerField(validators=[MaxValueValidator(4), MinValueValidator(0)])
 	name = models.CharField(max_length=80)
 	site = models.URLField(max_length=70)
 	email = models.EmailField(max_length=80)
-	phone = models.CharField(max_length=10)
+	phone = models.CharField(max_length=15)
 	street = models.CharField(max_length=50)
 	city = models.CharField(max_length=35)
 	state = models.CharField(max_length=35)
