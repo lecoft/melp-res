@@ -9,4 +9,5 @@ router.register(r'restaurants',views.RestaurantsViewSet)
 app_name = 'melp_res'
 urlpatterns = [
 	path('',include(router.urls)),
+	path('restaurants/statics',views.RestaurantsEndPoint.as_view(), name='statics'),
 ]
