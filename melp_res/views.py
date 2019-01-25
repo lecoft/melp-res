@@ -8,14 +8,27 @@ from geopy.distance import distance as geopy_distance
 
 class RestaurantsViewSet(viewsets.ModelViewSet):
 	"""
-	Melp's system API.
+	Melp's system REST API.
+	
+	Get: Return a list of all the existing restaurants, or an especific restaurant depending on the query.
+	Show all existing restaurants ../restaurants/ 		
+	Show the restaurant with the specified id ../restaurants/{id}		
+	
+	Post: Create a new restaurant.
+
+	Put, Patch: Update data from a restaurant.
+
+	Delete: Delete a restaurant.
+
+	EndPoint: ../restaurants/statics?latitude=x&longitude=y&radius=z
+
 	"""
 	queryset = Restaurants.objects.all()
 	serializer_class = RestaurantsSerializer
 
 class RestaurantsEndPoint(views.APIView):
 	"""
-	Melp's system API.
+	Melp's system Endpoint ../restaurants/statics?latitude=x&longitude=y&radius=z
 	"""
 
 	def get(self,request):
