@@ -48,11 +48,12 @@ class RestaurantsEndPoint(views.APIView):
 				count = count + 1;
 				avg = avg + res.rating
 				values.append(res.rating)
-		avg = avg/count
-		addition = 0
-		for val in values:
-			addition = addition + abs(val-avg)**2
-		std = math.sqrt(addition/count)
+		if count > 0:
+			avg = avg/count
+			addition = 0
+			for val in values:
+				addition = addition + abs(val-avg)**2
+			std = math.sqrt(addition/count)
 
 		return Response({
 			"count": count,
