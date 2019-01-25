@@ -9,8 +9,8 @@ class Restaurants(models.Model):
 	email = models.EmailField(max_length=80)
 	phone = models.CharField(max_length=15)
 	street = models.CharField(max_length=50)
-	city = models.CharField(max_length=35)
-	state = models.CharField(max_length=35)
+	city = models.CharField(max_length=50)
+	state = models.CharField(max_length=50)
 	lat = models.FloatField()
 	lng = models.FloatField()
 	
